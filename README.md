@@ -3,6 +3,16 @@ Work with Duffy C. "Python Penetration Testing for Developers" book, 2016
 
 Good book, for all
 
+
+
+
+
+
+
+
+
+road to Java:
+
 На мой взгляд теперь, самая короткая дорога:
 
 Несколько учебников по Java:
