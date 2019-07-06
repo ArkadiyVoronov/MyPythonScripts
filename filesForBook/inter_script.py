@@ -12,6 +12,7 @@ def get_interfaces():
     interfaces = netifaces.interfaces()
     return interfaces
 
+
 def get_gateways():
     gateway_dict = {}
     gws = netifaces.gateways()
