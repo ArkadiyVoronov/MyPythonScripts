@@ -3,7 +3,7 @@
 
 def get_gateways():
 	gateway_dict = {}
-	gws = netifaces.gateways()
+        gws = netifaces.gateways()
 	for gw in gws:
 		try:
 			gateway_iface = gws[gw][netifaces.AF_INET]
