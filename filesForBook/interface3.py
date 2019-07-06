@@ -9,10 +9,12 @@ import urllib2
 import struct
 import uuid
 
+
 def get_ip(inter):
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     ip_addr = socket.inet_ntoa(fcntl.ioctl(s.fileno(), 0x8915, struct.pack('256s', inter[:15]))[20:24])
     return ip_addr
+
 
 def get_mac_address(inter):
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -62,7 +64,7 @@ def get_localhost_details(interfaces_eth, interfaces_wlan):
 
 def get_public_ip(request_target):
     grabber = urllib2.build_opener()
-    grabber.addheaders = [('User-agent','Mozilla/5.0')]
+    grabber.addheaders = [('User-agent', 'Mozilla/5.0')]
     try:
         public_ip_address = grabber.open(target_url).read()
     except urllib2.HTTPError, error:
@@ -89,7 +91,7 @@ inter_wlan = ["wlan0", "wlan1", "wlan2", "wlan3", "wifi0", "wifi1", "wifi2", "wi
 public_ip = get_public_ip(target_url)
 hostdata, hostname, windows_ip, ethernet_ip, wireless_ip, host_fqdn, ethernet_mac, wireless_mac, windows_mac = get_localhost_details(inter_eth, inter_wlan)
 
-if not "None" in public_ip:
+if not in "None" public_ip:
     print("Your Public IP address is: %s") % (str(public_ip))
 else:
     print("Your Public IP address was not found")
