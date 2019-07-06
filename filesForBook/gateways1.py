@@ -1,5 +1,6 @@
 # !/usr/bin/env python
 
+
 def get_gateways():
 	gateway_dict = {}
 	gws = netifaces.gateways()
