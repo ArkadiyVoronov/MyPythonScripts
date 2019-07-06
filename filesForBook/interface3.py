@@ -22,6 +22,7 @@ def get_mac_address(inter):
     mac_address = ''.join(['%02x:' % ord(char) for char in info[18:24]])[:-1]
     return mac_address
 
+
 def get_localhost_details(interfaces_eth, interfaces_wlan):
     hostdata = "None"
     hostname = "None"
@@ -61,6 +62,7 @@ def get_localhost_details(interfaces_eth, interfaces_wlan):
         hostname = str(socket.gethostname())
         host_fqdn = socket.getfqdn()
     return hostdata, hostname, windows_ip, eth_ip, wlan_ip, host_fqdn, eth_mac, wlan_mac, windows_mac
+
 
 def get_public_ip(request_target):
     grabber = urllib2.build_opener()
