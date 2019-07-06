@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+# !/usr/bin/env python
+
 
 def get_ip(inter):
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
