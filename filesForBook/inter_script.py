@@ -5,12 +5,13 @@ except:
     sys.exit("[!] Install the netifaces library: pip install netifaces")
 
 gateways = {}
-network_ifaces= {}
+network_ifaces = {}
+
 
 def get_interfaces():
     interfaces = netifaces.interfaces()
     return interfaces
-    
+
 def get_gateways():
     gateway_dict = {}
     gws = netifaces.gateways()
@@ -24,6 +25,7 @@ def get_gateways():
             pass
     return gateway_dict
 
+
 def get_addresses(interface):
     addrs = netifaces.ifaddresses(interface)
     link_addr = addrs[netifaces.AF_LINK]
@@ -35,6 +37,7 @@ def get_addresses(interface):
     iface_broadcast = iface_dict.get('broadcast')
     iface_netmask = iface_dict.get('netmask')
     return hwaddr, iface_addr, iface_broadcast, iface_netmask
+
 
 def get_networks(gateways_dict):
     networks_dict = {}
