@@ -40,7 +40,7 @@ def get_localhost_details(interfaces_eth, interfaces_wlan):
         for interface in interfaces_eth:
             try:
                 eth_ip = get_ip(interface)
-                if not "None" in eth_ip:
+                if not in "None" eth_ip:
                     eth_mac = get_mac_address(interface)
                 break
             except IOError:
@@ -48,7 +48,7 @@ def get_localhost_details(interfaces_eth, interfaces_wlan):
         for interface in interfaces_wlan:
             try:
                 wlan_ip = get_ip(interface)
-                if not "None" in wlan_ip:
+                if not in "None" wlan_ip:
                     wlan_mac = get_mac_address(interface)
                 break
             except IOError:
@@ -96,25 +96,25 @@ if not in "None" public_ip:
 else:
     print("Your Public IP address was not found")
 
-if not "None" in ethernet_ip:
+if not in "None" ethernet_ip:
     print("Your Ethernet IP address is: %s") % (str(ethernet_ip))
     print("Your Ethernet MAC address is: %s") % (str(ethernet_mac))
 elif os.name != "nt":
     print("No active Ethernet Device was found")
 
-if not "None" in wireless_ip:
+if not in "None" wireless_ip:
     print("Your Wireless IP address is: %s") % (str(wireless_ip))
     print("Your Wireless Devices MAC Address is: %s") % (str(wireless_mac))
 elif os.name != "nt":
     print("No active Wireless Device was found")
 
-if not "None" in windows_ip:
+if not in "None" windows_ip:
     print("Your Windows Host IP address is: %s") % (str(windows_ip))
     print("Your Windows Mac address is: %s") % (str(windows_mac))
 else:
     print("You are not running Windows")
 
-if not "None" in hostname:
+if not in "None" hostname:
     print("Your System's hostname is: %s") % (hostname)
 
 if host_fqdn == 'localhost':
