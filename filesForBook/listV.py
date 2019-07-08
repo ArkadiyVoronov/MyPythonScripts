@@ -1,6 +1,7 @@
-#!/usr/bin/env python
+# !/usr/bin/env python
 
-list_example = [100,222,333,444,"string value"]
+
+list_example = [100, 222, 333, 444, "string value"]
 list_example_length = len(list_example)
 for iteration in list_example:
     index_value = list_example.index(iteration)
