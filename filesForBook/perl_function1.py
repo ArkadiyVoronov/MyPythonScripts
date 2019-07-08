@@ -7,4 +7,4 @@ print "In Perl\n";
 }
 
 # Function call
-wargames();
+wargames()
