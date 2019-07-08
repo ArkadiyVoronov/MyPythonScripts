@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+# !/usr/bin/env python
+
 
 name = "Hacker"
 name2 = "Penetration Tester"
