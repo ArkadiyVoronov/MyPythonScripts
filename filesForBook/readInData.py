@@ -1,4 +1,4 @@
-imimport csv
+import csv
 
 #final desired format
 # - Charts [["Test Name",<diff from avg>]]
@@ -14,14 +14,14 @@ column_chart_data = [["Test Name", "Diff from Avg"]]
 table_data = [["Test Name", "Run Time (s)"]]
 
 for row in timing_data[1:]:
-	test_name = row[0]
+        test_name = row[0]
 	if not row[1] or not row[2]:
 		continue
-	current_run_time = float(row[1])
-	avg_run_time = float(row[2])
-	diff_from_avg = avg_run_time - current_run_time
-	column_chart_data.append([test_name, diff_from_avg])
-	table_data.append([test_name, current_run_time])
+        current_run_time = float(row[1])
+        avg_run_time = float(row[2])
+        diff_from_avg = avg_run_time - current_run_time
+        column_chart_data.append([test_name, diff_from_avg])
+        table_data.append([test_name, current_run_time])
 
 from string import Template
 
@@ -37,7 +37,7 @@ html_string = Template("""<html>
       $data
       ],
       false); // 'false' means that the first row contains labels
-  	var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
       chart.draw(data);
   }
 </script>
@@ -49,10 +49,10 @@ html_string = Template("""<html>
 
 chart_data_str = ''
 for row in column_chart_data[1:]:
-	chart_data_str += '%s,\n'%row
+        chart_data_str += '%s,\n'%row
 
 completed_html = html_string.substitute(labels=column_chart_data[0],
 data=chart_data_str)
 
-with open('column_chart.html','w') as f:
-	f.write(completed_html)
+with open('column_chart.html', 'w') as f:
+        f.write(completed_html)
